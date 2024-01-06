@@ -1,0 +1,74 @@
+const mongoose = require("mongoose")
+
+const userSchema = new mongoose.Schema({
+    FirstName:{
+        type:String,
+        required:true
+    },
+    LastName:{
+        type:String,
+        required:true
+    },
+    email:{
+        type:String,
+        required:true
+    },
+    password:{
+        type:String,
+        required:true
+    },
+    freinds:{
+        type:Array,
+        default:[]
+    },
+    country:{
+        type:String,
+        default:"India"
+    },
+    state:{
+        type:String,
+        default:"uttarakhand"
+    },
+    interests:{
+        type:[String],
+        enum:["dancing", "fashion","gaming","cooking","driving","crafts","drawing","movies","art & craft", "travelling","sports","blogging","reading","photography" ,"music"]
+    },
+    profilePicture:{
+        type:String,
+        required:false
+    },
+    gender:{
+        type:String,
+        required:false
+    },
+    Interested:{
+        type:String,
+        required:false
+    },
+    DOB:{
+        type:String,
+        required:false
+    },
+    Zodiac:{
+        type:String,
+        required:false
+    },
+    profession:{
+        type:String,
+        required:false
+    },
+    desc:{
+        type:String,
+        required:false
+    },
+    localArea:{
+        type:String,
+        required:false
+    },
+    city:{
+        type:String,
+        required:false
+    }
+},{timestamps:true})
+
+module.exports = mongoose.model('users',userSchema)
